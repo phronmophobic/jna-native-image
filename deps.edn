@@ -1,0 +1,6 @@
+{:deps {net.java.dev.jna/jna {:mvn/version "5.13.0"}
+        com.github.clj-easy/graal-build-time {:mvn/version "0.1.4"}}
+ :aliases
+ {:build {:deps {io.github.clojure/tools.build {:git/tag "v0.8.3" :git/sha "0d20256"}}
+          :ns-default build}}
+ }
