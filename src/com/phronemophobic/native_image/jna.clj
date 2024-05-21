@@ -3,7 +3,8 @@
            com.sun.jna.NativeLibrary
            com.sun.jna.Function
            com.sun.jna.Memory
-           com.sun.jna.IntegerType)
+           com.sun.jna.IntegerType
+           com.sun.jna.Platform)
   (:gen-class))
 
 (set! *warn-on-reflection* true)
@@ -11,9 +12,12 @@
 (def void Void/TYPE)
 
 (def clib (delay (NativeLibrary/getInstance "c")))
+(def mlib (delay (NativeLibrary/getInstance "m")))
 
 (defn- cos [d]
-  (let [cos-fn (.getFunction ^NativeLibrary @clib "cos")]
+  (let [cos-fn (if (Platform/isMac)
+                 (.getFunction ^NativeLibrary @clib "cos")
+                 (.getFunction ^NativeLibrary @mlib "cos"))]
     (.invoke ^Function cos-fn Double/TYPE (clojure.core/to-array [d]))))
 
 (defn -main [& args]
