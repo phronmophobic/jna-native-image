@@ -23,7 +23,7 @@
 
 (defn- ys2edn-init []
   (let [ys2edn-init (.getFunction ^NativeLibrary @ryml "ys2edn_init")
-        ryml-pointer ^Long (.invoke ^Function ys2edn-init (clojure.core/to-array []))]
+        ryml-pointer ^Pointer (.invoke ^Function ys2edn-init (clojure.core/to-array []))]
     (println "init function pointer" ys2edn-init)
     (println "ryml-pointer value" ryml-pointer)
     ryml-pointer))
