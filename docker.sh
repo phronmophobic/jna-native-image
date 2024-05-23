@@ -2,6 +2,8 @@
 
 set -x
 
+echo 'set exrc' >> /root/.vimrc
+
 git config --global --add safe.directory /repo
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
