@@ -1,3 +1,8 @@
+export JAVA_HOME=/graalvm
+export PATH=$JAVA_HOME/bin:$PATH
+
+source /etc/bash_completion
+
 ll() ( ls -l --color "$@" )
 la() ( ll -a "$@" )
 
