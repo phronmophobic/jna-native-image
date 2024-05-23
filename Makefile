@@ -56,14 +56,14 @@ test-shell: $(HISTORY)
 	    -v $<:/root/.bash_history \
 	    clojure bash -l
 
-$(RAPIDYAML_LIBRARY): rapidyaml/native/librapidyaml.so.0.6.0
+$(RAPIDYAML_LIBRARY): yamlscript/rapidyaml/native/librapidyaml.so.0.6.0
 	mv $< $@
 
-rapidyaml/native/librapidyaml.so.0.6.0: yamlscript
+yamlscript/rapidyaml/native/librapidyaml.so.0.6.0: yamlscript
 	$(MAKE) -C $</rapidyaml build
 
 force: yamlscript
-	$(MAKE) -C $</rapidyaml build
+	$(MAKE) -C $</rapidyaml realclean
 
 yamlscript:
 	git clone --depth=1 --branch=rapidyaml $(YAMLSCRIPT_REPO) $@

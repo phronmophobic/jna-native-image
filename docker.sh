@@ -9,7 +9,7 @@ git config --global user.name "Your Name"
 source bashrc
 
 apt update
-apt install -y cmake gcc libz-dev make tig vim wget
+apt install -y cmake gcc g++ libz-dev make tig vim wget
 
 cd /
 
