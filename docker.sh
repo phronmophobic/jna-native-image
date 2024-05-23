@@ -3,9 +3,13 @@
 set -x
 
 git config --global --add safe.directory /repo
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+source bashrc
 
 apt update
-apt install -y gcc libz-dev make vim wget
+apt install -y cmake gcc libz-dev make tig vim wget
 
 cd /
 
@@ -23,7 +27,5 @@ clojure -T:build uber
 ./target/jna
 
 chown -R --reference=docker.sh .
-
-source bashrc
 
 set +x

@@ -1,3 +1,6 @@
+ll() ( ls -l --color "$@" )
+la() ( ll -a "$@" )
+
 gst() (
   git status --ignored "$@"
 )

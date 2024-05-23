@@ -5,7 +5,6 @@ ROOT := $(shell pwd)
 HISTORY := /tmp/docker-bash-history
 
 SOURCES := \
-    Makefile \
     compile.sh \
     $(shell find src -type f) \
 
@@ -14,12 +13,25 @@ CONFIGS := \
   config/resource-config.json \
   config/reflect-config.json \
 
+RAPIDYAML_LIBRARY := /usr/lib/x86_64-linux-gnu/librapidyaml.so
+
+YAMLSCRIPT_REPO := https://github.com/yaml/yamlscript
+
 default:
 
 run: build
 	target/jna
 
-build: target/jna
+build: target/jna $(RAPIDYAML_LIBRARY)
+
+clean:
+	$(RM) -r .cpcache/ target $(CONFIGS)
+
+realclean: clean
+	$(RM) -r yamlscript
+
+sysclean:
+	$(RM) $(RAPIDYAML_LIBRARY)
 
 target/jna: compile.sh $(CONFIGS) target/jna-0.1.0-standalone.jar
 	bash $<
@@ -44,8 +56,17 @@ test-shell: $(HISTORY)
 	    -v $<:/root/.bash_history \
 	    clojure bash -l
 
-clean:
-	$(RM) -r .cpcache/ target $(CONFIGS)
+$(RAPIDYAML_LIBRARY): rapidyaml/native/librapidyaml.so.0.6.0
+	mv $< $@
+
+rapidyaml/native/librapidyaml.so.0.6.0: yamlscript
+	$(MAKE) -C $</rapidyaml build
+
+force: yamlscript
+	$(MAKE) -C $</rapidyaml build
+
+yamlscript:
+	git clone --depth=1 --branch=rapidyaml $(YAMLSCRIPT_REPO) $@
 
 $(HISTORY):
 	mkdir $@

@@ -21,12 +21,20 @@
                  (.getFunction ^NativeLibrary @mlib "cos"))]
     (.invoke ^Function cos-fn Double/TYPE (clojure.core/to-array [d]))))
 
-(defn- parse-ys [ys]
-  (let [parseys-fn (.getFunction ^NativeLibrary @ryml "ys2edn")]
-    (println parseys-fn)))
+(defn- ys2edn-init []
+  (let [ys2edn-init (.getFunction ^NativeLibrary @ryml "ys2edn_init")
+        ryml-pointer ^Long (.invoke ^Function ys2edn-init (clojure.core/to-array []))]
+    (println "init function pointer" ys2edn-init)
+    (println "ryml-pointer value" ryml-pointer)
+    ryml-pointer))
+
+(defn- ys2edn-destroy [rptr]
+  (let [ys2edn-destroy (.getFunction ^NativeLibrary @ryml "ys2edn_destroy")
+        _ (.invoke ^Function ys2edn-destroy (clojure.core/to-array [rptr]))]
+    (println "destroy function pointer" ys2edn-destroy)))
 
 (defn -main [& args]
-  (parse-ys "foo")
   (println "cosine of 42 is" (cos 42.0))
-  )
 
+  (let [rptr (ys2edn-init)]
+    (ys2edn-destroy rptr)))
