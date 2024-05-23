@@ -1,6 +1,7 @@
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.Callback
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.CallbackReference
@@ -18,27 +19,37 @@
     parameterTypes:
     - java.lang.Object
     - boolean
+
+
+# XXX
   - name: initializeThread
     parameterTypes:
     - com.sun.jna.Callback
     - com.sun.jna.CallbackReference$AttachOptions
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.CallbackReference$AttachOptions
+
+
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.FromNativeConverter
   methods:
   - name: nativeType
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.IntegerType
   fields:
   - name: value
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.JNIEnv
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.Native
@@ -65,6 +76,7 @@
     parameterTypes:
     - com.sun.jna.ToNativeConverter
     - java.lang.Object
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.Native$ffi_callback
@@ -74,12 +86,14 @@
     - long
     - long
     - long
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.NativeMapped
   methods:
   - name: toNative
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.Pointer
@@ -89,11 +103,13 @@
   - name: <init>
     parameterTypes:
     - long
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.PointerType
   fields:
   - name: pointer
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.Structure
@@ -111,9 +127,15 @@
     parameterTypes:
     - java.lang.Class
     - long
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.Structure$ByValue
+
+
+
+# XXX
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.Structure$FFIType$FFITypes
@@ -131,6 +153,9 @@
   - name: ffi_type_uint64
   - name: ffi_type_uint8
   - name: ffi_type_void
+
+
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: com.sun.jna.WString
@@ -138,6 +163,7 @@
   - name: <init>
     parameterTypes:
     - java.lang.String
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Boolean
@@ -148,6 +174,7 @@
   - name: <init>
     parameterTypes:
     - boolean
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Byte
@@ -158,6 +185,7 @@
   - name: <init>
     parameterTypes:
     - byte
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Character
@@ -168,12 +196,14 @@
   - name: <init>
     parameterTypes:
     - char
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Class
   methods:
   - name: getComponentType
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Double
@@ -184,6 +214,7 @@
   - name: <init>
     parameterTypes:
     - double
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Float
@@ -194,6 +225,7 @@
   - name: <init>
     parameterTypes:
     - float
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Integer
@@ -204,6 +236,7 @@
   - name: <init>
     parameterTypes:
     - int
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Long
@@ -214,12 +247,14 @@
   - name: <init>
     parameterTypes:
     - long
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Object
   methods:
   - name: toString
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Short
@@ -230,6 +265,7 @@
   - name: <init>
     parameterTypes:
     - short
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.String
@@ -248,6 +284,7 @@
     - java.lang.String
   - name: toCharArray
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.System
@@ -255,11 +292,13 @@
   - name: getProperty
     parameterTypes:
     - java.lang.String
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.Void
   fields:
   - name: TYPE
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.lang.reflect.Method
@@ -268,12 +307,14 @@
     parameterTypes: []
   - name: getReturnType
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.nio.Buffer
   methods:
   - name: position
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.nio.ByteBuffer
@@ -282,6 +323,7 @@
     parameterTypes: []
   - name: arrayOffset
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.nio.CharBuffer
@@ -290,6 +332,7 @@
     parameterTypes: []
   - name: arrayOffset
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.nio.DoubleBuffer
@@ -298,6 +341,7 @@
     parameterTypes: []
   - name: arrayOffset
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.nio.FloatBuffer
@@ -306,6 +350,7 @@
     parameterTypes: []
   - name: arrayOffset
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.nio.IntBuffer
@@ -314,6 +359,7 @@
     parameterTypes: []
   - name: arrayOffset
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.nio.LongBuffer
@@ -322,6 +368,7 @@
     parameterTypes: []
   - name: arrayOffset
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.nio.ShortBuffer

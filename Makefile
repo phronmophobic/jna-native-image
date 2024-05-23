@@ -7,7 +7,7 @@ HISTORY := /tmp/docker-bash-history
 SOURCES := \
     Makefile \
     compile.sh \
-    $(wildcard *.json) \
+    $(shell find src -type f) \
 
 CONFIGS := \
   config/jni-config.json \

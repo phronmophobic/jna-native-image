@@ -1,18 +1,29 @@
 bundles: []
+
 resources:
   includes:
+
+  # Linux Intel
   - condition:
       typeReachable: com.sun.jna.Native
     pattern: \Qcom/sun/jna/linux-x86-64/libjnidispatch.so\E
-  - condition:
-      typeReachable: com.sun.jna.Native
-    pattern: \Qcom/sun/jna/darwin-aarch64/libjnidispatch.jnilib\E
+
+  # Linux ARM
   - condition:
       typeReachable: com.sun.jna.Native
     pattern: \Qcom/sun/jna/linux-aarch64/libjnidispatch.so\E
+
+  # Mac ARM
+  - condition:
+      typeReachable: com.sun.jna.Native
+    pattern: \Qcom/sun/jna/darwin-aarch64/libjnidispatch.jnilib\E
+
+  # Mac Intel
   - condition:
       typeReachable: com.sun.jna.Native
     pattern: \Qcom/sun/jna/darwin-x86-64/libjnidispatch.jnilib\E
+
+  # Windows Intel
   - condition:
       typeReachable: com.sun.jna.Native
     pattern: \Qcom/sun/jna/win32-x86-64/jnidispatch.dll\E

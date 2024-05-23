@@ -5,6 +5,7 @@
   - name: callback
     parameterTypes:
     - java.lang.Object[]
+
 - condition:
     typeReachable: com.sun.jna.Library$Handler
   name: java.lang.Object
@@ -16,6 +17,7 @@
     parameterTypes: []
   - name: toString
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.NativeLibrary
   name: java.lang.Throwable
@@ -23,6 +25,7 @@
   - name: addSuppressed
     parameterTypes:
     - java.lang.Throwable
+
 - condition:
     typeReachable: com.sun.jna.internal.ReflectionUtils
   name: java.lang.invoke.MethodHandle
@@ -33,6 +36,7 @@
   - name: invokeWithArguments
     parameterTypes:
     - java.lang.Object[]
+
 - condition:
     typeReachable: com.sun.jna.internal.ReflectionUtils
   name: java.lang.invoke.MethodHandles
@@ -43,6 +47,7 @@
     parameterTypes:
     - java.lang.Class
     - java.lang.invoke.MethodHandles$Lookup
+
 - condition:
     typeReachable: com.sun.jna.internal.ReflectionUtils
   name: java.lang.invoke.MethodHandles$Lookup
@@ -60,6 +65,7 @@
     parameterTypes:
     - java.lang.reflect.Method
     - java.lang.Class
+
 - condition:
     typeReachable: com.sun.jna.internal.ReflectionUtils
   name: java.lang.invoke.MethodType
@@ -68,30 +74,36 @@
     parameterTypes:
     - java.lang.Class
     - java.lang.Class[]
+
 - condition:
     typeReachable: com.sun.jna.VarArgsChecker
   name: java.lang.reflect.Method
   methods:
   - name: isVarArgs
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.internal.ReflectionUtils
   name: java.lang.reflect.Method
   methods:
   - name: isDefault
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Platform
   name: java.nio.Buffer
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: java.security.SecureRandomParameters
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: sun.security.provider.NativePRNG
   methods:
   - name: <init>
     parameterTypes: []
+
 - condition:
     typeReachable: com.sun.jna.Native
   name: sun.security.provider.SHA
