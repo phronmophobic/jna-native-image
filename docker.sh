@@ -23,3 +23,7 @@ clojure -T:build uber
 ./target/jna
 
 chown -R --reference=docker.sh .
+
+source bashrc
+
+set +x
